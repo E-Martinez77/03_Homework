@@ -61,7 +61,10 @@ function generatePassword() {
     for (var i = 0; i < howMany; i++) {
         result += allChar.charAt(Math.floor(Math.random() * allChar.length));
     }
+    alert(result);
     return result;
+
+    
 
 
 }
