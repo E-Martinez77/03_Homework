@@ -48,6 +48,21 @@ function generatePassword() {
     console.log(specialCharacters);
     console.log(numbers);
 
+    var result = "";
+    var allChar = "";
+
+    if (specialCharacters === true) {
+        allChar = allChar + specSymb;
+    }
+    if (numbers === true) {
+        allChar = allChar + numbers;
+    }
+
+    for (var i = 0; i < howMany; i++) {
+        result += allChar.charAt(Math.floor(Math.random() * allChar.length));
+    }
+    return result;
+
 
 }
 
