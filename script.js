@@ -14,100 +14,21 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 
-//Build array for special characters
+//Build string for special characters
 
-var specSymb = [
-    "!"
-    , "@"
-    , "#"
-    , "$"
-    , "%"
-    , "^"
-    , "&"
-    , "*"
-    , "("
-    , ")"
-    , "_"
-    , "-"
-  ];
+var specSymb = "!@#$%^&*()_-";
 
-//Build array for Numbers
+//Build string for Numbers
 
-var numbers = [
-    "1"
-    , "2"
-    , "3"
-    , "3"
-    , "4"
-    , "5"
-    , "6"
-    , "7"
-    , "8"
-    , "9"
-    , "0"
-  ];
+var numbers = "1234567890";
 
-// Build an array for uppercase letters
+// Build string for uppercase letters
 
-var upperCase = [
-    "A"
-    , "B"
-    , "C"
-    , "D"
-    , "E"
-    , "F"
-    , "G"
-    , "H"
-    , "I"
-    , "J"
-    , "K"
-    , "L"
-    , "M"
-    , "N"
-    , "O"
-    , "P"
-    , "Q"
-    , "R"
-    , "S"
-    , "T"
-    , "U"
-    , "V"
-    , "W"
-    , "X"
-    , "Y"
-    , "Z"
-  ];
+var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-//Build an array for lowercase letters
+//Build string for lowercase letters
 
-var lowerCase = [
-    "a"
-    , "b"
-    , "c"
-    , "d"
-    , "e"
-    , "f"
-    , "g"
-    , "h"
-    , "i"
-    , "j"
-    , "k"
-    , "l"
-    , "m"
-    , "n"
-    , "o"
-    , "p"
-    , "q"
-    , "r"
-    , "s"
-    , "t"
-    , "u"
-    , "v"
-    , "w"
-    , "x"
-    , "y"
-    , "z"
-  ];
+var lowerCase = "abcdefghijklmnopqrstuvwxyz";
 
 // We need a generatePassword Function
 
