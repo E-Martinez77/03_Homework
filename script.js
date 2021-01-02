@@ -3,10 +3,10 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+    passwordText.value = password;
 
 }
 
@@ -32,24 +32,62 @@ var lowerCase = "abcdefghijklmnopqrstuvwxyz";
 
 // We need a generatePassword Function
 
-//How do I make an alert pop up on button click
+function generatePassword() {
+    var howMany = prompt("How Many Characters would you like? (Min 8, Max 128)");
 
-document.getElementById("generate").onclick = function () {
-  var howMany = prompt("How Many Characters would you like? (Minimum 8)");
+    if (howMany < 8 || howMany > 128){
+        alert("Password must be more than 8 and less than 128 Characters, Please try again.");
+        
+    }
+    else{
+        var specialCharacters = confirm("Would you like to include Special Characters?");
+        var numbers = confirm("Would you like to include numbers?");        
+    }
 
-  if (howMany < 8) {
-    alert("Password must be more than 8 Characters, Please try again");
-  }
-  else {
-    var specialChar = confirm("Would you like to include special characters?");
-
-    var includeNumber = confirm("Would you like to include numeric characters");
-
-    var includeUpper = confirm("Click OK to confirm including uppercase letters");
-
-    var includeLower = confirm("Click OK to confirm including lowercase letters");
-  }
-
+    console.log(howMany);
+    console.log(specialCharacters);
+    console.log(numbers);
 
 
 }
+
+
+
+//How do I make an alert pop up on button click
+
+
+
+// document.getElementById("generate").onclick = function () {
+//     var howMany = prompt("How Many Characters would you like? (Min 8, Max 128)");
+
+
+//     //   if (howMany < 8 || howMany > 128) {
+//     //     alert("Password must be more than 8 or less than 128 Characters, Please try again");
+//     //   }
+//     //   else {
+//     //     var specialChar = confirm("Would you like to include special characters?");
+
+//     //     var includeNumber = confirm("Would you like to include numeric characters");
+
+//     //     var includeUpper = confirm("Click OK to confirm including uppercase letters");
+
+//     //     var includeLower = confirm("Click OK to confirm including lowercase letters");
+//     // }
+
+//     if (howMany > 8 || howMany < 128) {
+//     var specialChar = confirm("Would you like to include special characters?");
+
+//     var includeNumber = confirm("Would you like to include numeric characters");
+
+//     var includeUpper = confirm("Click OK to confirm including uppercase letters");
+
+//     var includeLower = confirm("Click OK to confirm including lowercase letters");
+
+//     }
+//     else {
+//     alert("Password must be more than 8 or less than 128 Characters, Please try again");
+//     }
+
+
+
+// }
