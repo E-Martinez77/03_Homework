@@ -19,6 +19,8 @@ The password is alerted as well as written to page as per acceptance criteria.
 
 The following image shows the web application's appearance and functionality:
 
+https://github.com/E-Martinez77/03_Homework/blob/main/assets/Screen%20Shot%202021-01-02%20at%201.02.21%20PM.png
+
 
 ## Deployed Application 
 
