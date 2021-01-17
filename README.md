@@ -14,13 +14,13 @@ After all prompts are answered a password is generated.
 
 The password is alerted as well as written to page as per acceptance criteria.
 
-
 ## Mock-Up
 
 The following image shows the web application's appearance and functionality:
 
+![Image of password generator](03_Homework/assets/Screen Shot 2021-01-02 at 1.02.21 PM.png)
 
-## Deployed Application 
+## Deployed Application
 
 https://github.com/E-Martinez77/03_Homework
 
