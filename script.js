@@ -3,69 +3,90 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-    var password = generatePassword();
-    var passwordText = document.querySelector("#password");
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
-    passwordText.value = password;
-
+  passwordText.value = password;
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-
-
-var specSymb = "!@#$%^&*()_-";
-var numbers = "1234567890";
-var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var lowerCase = "abcdefghijklmnopqrstuvwxyz";
-
 function generatePassword() {
-    var howMany = prompt("How Many Characters would you like? (Min 8, Max 128)");
+  let output = "";
+  let upper = "ABCDEFGHIJKLMONPQRSTUVWXYZ"; //Upper Case Characters
+  let lower = "abcdefghijklmnopqrstuvwxyz"; //Lower Case Characters
+  let spec = "!@#$%^&*()"; //Symbols
+  let num = "1234567890"; //numbers
 
-    if (howMany < 8 || howMany > 128) {
-        alert("Password must be more than 8 and less than 128 Characters, Please try again.");
+  let char;
 
-    }
-    else {
-        var specialCharacters = confirm("Would you like to include Special Characters?");
-        var numbers = confirm("Would you like to include numbers?");
-        var includeUpper = confirm("Would you like to include Upper Case Characters?");
-        var includeLower = confirm("Would you like to include Lower Case Characters?")
-    }
+  // var letters = "abcdefghijklmnop" //test string
+  // var randLetter = letters.length
+  let howMany = prompt("How many characters would you like?");
 
-    // console.log(howMany);
-    // console.log(specialCharacters);
-    // console.log(numbers);
+  if (howMany < 8 || howMany > 128) {
+    alert(
+      "Password must be more between 8 and 128 Characters. Please try again"
+    );
+    return;
+  }
+  var wantSpec = confirm("Would you like to include special characters?");
+  var wantNum = confirm("Would you like to include numbers?");
+  var wantUpper = confirm("Would you like to include uppercase characters?");
+  var wantLower = confirm("Would you like to include lowercase characters?");
 
-    var result = "";
-    var allChar = "";
+  if (
+    wantSpec === false &&
+    wantNum === false &&
+    wantUpper === false &&
+    wantLower === false
+  ) {
+    alert("At least one Character type must be selected. Please try again.");
+    return;
+  }
 
-    if (specialCharacters === true) {
-        allChar = allChar + specSymb;
-    }
-    if (numbers === true) {
-        allChar = allChar + numbers;
-    }
-    if (includeUpper === true) {
-        allChar = allChar + upperCase;
-    }
-    if (includeLower === true) {
-        allChar = allChar + lowerCase;
-    }
-    if (specialCharacters == !true && numbers == !true && includeUpper == !true && includeLower == !true){
-        alert("At least one character type must be selected");
-        return;
-    }
+  if (
+    wantSpec === true &&
+    wantNum === false &&
+    wantUpper === false &&
+    wantLower === false
+  ) {
+    char = spec;
+    console.log("Special only");
+  }
+  if (
+    wantSpec === true &&
+    wantNum === true &&
+    wantUpper === false &&
+    wantLower === false
+  ) {
+    char = spec + num;
+    console.log("Special Characters and Numbers");
+  }
+  if (
+    wantSpec === true &&
+    wantNum === true &&
+    wantUpper === true &&
+    wantLower === false
+  ) {
+    char = spec + num + upper;
+    console.log("Special Characters, Numbers and Uppercase");
+  }
+  if (
+    wantSpec === true &&
+    wantNum === true &&
+    wantUpper === true &&
+    wantLower === true
+  ) {
+    char = spec + num + upper + lower;
+    console.log("Special Characters, Numbers, Uppercase and Lowercase");
+  }
 
-    for (var i = 0; i < howMany; i++) {
-        result += allChar.charAt(Math.floor(Math.random() * allChar.length));
-    }
-    alert(result);
-    return result;
-
-    
-
-
+  for (let i = 0; i < howMany; i++) {
+    output += char.charAt(Math.floor(Math.random() * char.length));
+  }
+  console.log(output);
+  alert(output);
+  return output;
 }
-
